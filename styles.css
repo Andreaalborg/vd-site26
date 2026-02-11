@@ -1,0 +1,472 @@
+/* Valentine's Day Theme */
+:root {
+    --primary-color: #ff6b9d;
+    --secondary-color: #ff4757;
+    --accent-color: #ff3838;
+    --light-pink: #ffebee;
+    --dark-pink: #e91e63;
+    --text-color: #2c3e50;
+    --white: #ffffff;
+    --shadow: rgba(255, 107, 157, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, var(--light-pink) 0%, #fff5f7 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 20% 80%, rgba(255, 107, 157, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 71, 87, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 56, 56, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.container {
+    max-width: 600px;
+    width: 90%;
+    margin: 20px;
+    position: relative;
+}
+
+/* Floating hearts animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    color: var(--primary-color);
+    font-size: 24px;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 20%; animation-delay: 1s; font-size: 18px; }
+.heart:nth-child(3) { left: 70%; animation-delay: 2s; }
+.heart:nth-child(4) { left: 80%; animation-delay: 3s; font-size: 20px; }
+.heart:nth-child(5) { left: 45%; animation-delay: 4s; }
+
+.question {
+    display: none;
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 15px 35px var(--shadow);
+    text-align: center;
+    position: relative;
+    border: 3px solid transparent;
+    background-image: linear-gradient(var(--white), var(--white)), linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.question.active {
+    display: block;
+    animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question-content, .reveal-content {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1 {
+    color: var(--dark-pink);
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.question-text {
+    margin-bottom: 30px;
+}
+
+.question-text p {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.answer-input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    outline: none;
+    transition: all 0.3s ease;
+    background: var(--white);
+}
+
+.answer-input:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.2);
+    transform: scale(1.02);
+}
+
+.next-btn, .restart-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.next-btn:hover, .restart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+}
+
+.next-btn:active, .restart-btn:active {
+    transform: translateY(0);
+}
+
+/* Photo Collage Styling */
+.collage-container {
+    margin: 30px 0;
+    width: 100%;
+}
+
+.collage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.collage-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+    position: relative;
+    background: var(--white);
+}
+
+.collage-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(255, 71, 87, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.collage-item:hover::before {
+    opacity: 1;
+}
+
+.collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.collage-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Different sizes for collage items */
+.collage-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+    min-height: 300px;
+}
+
+.collage-item.medium {
+    grid-column: span 1;
+    grid-row: span 1;
+    min-height: 180px;
+}
+
+.collage-item.small {
+    grid-column: span 1;
+    grid-row: span 1;
+    min-height: 150px;
+}
+
+/* Animation for collage items */
+@keyframes fadeInCollage {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.collage-item {
+    animation: fadeInCollage 0.6s ease-out;
+    animation-fill-mode: backwards;
+}
+
+.collage-item:nth-child(1) { animation-delay: 0.1s; }
+.collage-item:nth-child(2) { animation-delay: 0.2s; }
+.collage-item:nth-child(3) { animation-delay: 0.3s; }
+.collage-item:nth-child(4) { animation-delay: 0.4s; }
+.collage-item:nth-child(5) { animation-delay: 0.5s; }
+.collage-item:nth-child(6) { animation-delay: 0.6s; }
+.collage-item:nth-child(7) { animation-delay: 0.7s; }
+
+.message {
+    margin-top: 30px;
+}
+
+.message h2 {
+    color: var(--dark-pink);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.message p {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        margin: 10px;
+    }
+
+    .question {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .question-text p {
+        font-size: 1.2rem;
+    }
+
+    .answer-input {
+        padding: 12px 18px;
+        font-size: 1rem;
+    }
+
+    .next-btn, .restart-btn {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+
+    .message h2 {
+        font-size: 1.6rem;
+    }
+
+    .message p {
+        font-size: 1.1rem;
+    }
+
+    /* Collage responsive adjustments */
+    .collage-container {
+        margin: 15px 0;
+    }
+
+    .collage-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+        padding: 5px;
+    }
+
+    .collage-item.large {
+        grid-column: span 2;
+        grid-row: span 2;
+        min-height: 140px;
+        max-height: 140px;
+    }
+
+    .collage-item.medium {
+        grid-column: span 1;
+        grid-row: span 1;
+        min-height: 67px;
+        max-height: 67px;
+    }
+
+    .collage-item.small {
+        grid-column: span 1;
+        grid-row: span 1;
+        min-height: 67px;
+        max-height: 67px;
+    }
+
+    .message {
+        margin-top: 15px;
+    }
+
+    .message h2 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .message p {
+        font-size: 1rem;
+    }
+
+    .restart-btn {
+        margin-top: 15px;
+    }
+
+    /* Disable hover effects on mobile */
+    .collage-item:hover img {
+        transform: none;
+    }
+
+    .collage-item:hover::before {
+        opacity: 0;
+    }
+}
+
+/* Loading animation */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.loading .next-btn {
+    position: relative;
+}
+
+.loading .next-btn::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Extra small screens (iPhone SE, small phones) */
+@media (max-width: 400px) {
+    .question {
+        padding: 15px 10px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+
+    .collage-container {
+        margin: 10px 0;
+    }
+
+    .collage-grid {
+        gap: 5px;
+        padding: 3px;
+    }
+
+    .collage-item.large {
+        min-height: 120px;
+        max-height: 120px;
+    }
+
+    .collage-item.medium {
+        min-height: 57px;
+        max-height: 57px;
+    }
+
+    .collage-item.small {
+        min-height: 57px;
+        max-height: 57px;
+    }
+
+    .message {
+        margin-top: 10px;
+    }
+
+    .message h2 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+
+    .message p {
+        font-size: 0.9rem;
+    }
+
+    .restart-btn {
+        margin-top: 10px;
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}

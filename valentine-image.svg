@@ -1,0 +1,35 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b9d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff4757;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg)" rx="20"/>
+
+  <text x="200" y="60" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    Erstatt dette bildet! 📸
+  </text>
+
+  <text x="200" y="100" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16">
+    Legg inn et bilde av deg hvor du spør:
+  </text>
+
+  <text x="200" y="130" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    "Vil du være min Valentine? ❤️"
+  </text>
+
+  <text x="200" y="170" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14">
+    Navngi filen: valentine-image.jpg
+  </text>
+
+  <text x="200" y="200" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14">
+    og legg den i samme mappe som index.html
+  </text>
+
+  <circle cx="200" cy="240" r="30" fill="rgba(255,255,255,0.3)"/>
+  <text x="200" y="248" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24">
+    ❤️
+  </text>
+</svg>

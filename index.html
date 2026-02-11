@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En liten overraskelse 💕</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Question 1 -->
+        <div id="question1" class="question active">
+            <div class="question-content">
+                <h1>Svar på dette spørsmålet først...</h1>
+                <div class="question-text">
+                    <p>Hva er din favorittfarge?</p>
+                </div>
+                <input type="text" id="answer1" placeholder="Skriv svaret ditt her..." class="answer-input">
+                <button onclick="nextQuestion(1)" class="next-btn">Neste spørsmål</button>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div id="question2" class="question">
+            <div class="question-content">
+                <h1>Et spørsmål til...</h1>
+                <div class="question-text">
+                    <p>Hvilken årstid liker du best?</p>
+                </div>
+                <input type="text" id="answer2" placeholder="Skriv svaret ditt her..." class="answer-input">
+                <button onclick="nextQuestion(2)" class="next-btn">Neste spørsmål</button>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div id="question3" class="question">
+            <div class="question-content">
+                <h1>Fortsett å svare...</h1>
+                <div class="question-text">
+                    <p>Hva er din favorittmat?</p>
+                </div>
+                <input type="text" id="answer3" placeholder="Skriv svaret ditt her..." class="answer-input">
+                <button onclick="nextQuestion(3)" class="next-btn">Neste spørsmål</button>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div id="question4" class="question">
+            <div class="question-content">
+                <h1>Nesten ferdig...</h1>
+                <div class="question-text">
+                    <p>Hvilket dyr liker du best?</p>
+                </div>
+                <input type="text" id="answer4" placeholder="Skriv svaret ditt her..." class="answer-input">
+                <button onclick="nextQuestion(4)" class="next-btn">Se overraskelsen!</button>
+            </div>
+        </div>
+
+        <!-- Final Reveal -->
+        <div id="reveal" class="question">
+            <div class="reveal-content">
+                <h1>Du har svart på alle spørsmålene! 🎉</h1>
+                <div class="collage-container">
+                    <div class="collage-grid">
+                        <div class="collage-item large">
+                            <img src="image1.jpg" alt="Us together">
+                        </div>
+                        <div class="collage-item medium">
+                            <img src="image2.jpg" alt="Beach memories">
+                        </div>
+                        <div class="collage-item small">
+                            <img src="image3.jpg" alt="Sweet moment">
+                        </div>
+                        <div class="collage-item medium">
+                            <img src="image4.jpg" alt="Family time">
+                        </div>
+                        <div class="collage-item large">
+                            <img src="image5.jpg" alt="Christmas joy">
+                        </div>
+                        <div class="collage-item small">
+                            <img src="image6.jpg" alt="Happy together">
+                        </div>
+                        <div class="collage-item medium">
+                            <img src="image7.jpg" alt="New beginnings">
+                        </div>
+                    </div>
+                </div>
+                <div class="message">
+                    <h2>Vil du være min Valentine? 💖</h2>
+                    <p>Jeg elsker deg masse! ❤️</p>
+                </div>
+                <button onclick="restart()" class="restart-btn">Start på nytt</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

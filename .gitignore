@@ -1,0 +1,21 @@
+# Screenshots
+*-preview.png
+*-view.png
+mobile-*.png
+
+# Original image files (keep only processed jpgs)
+*.HEIC
+IMG_*.JPG
+IMG_*.jpg
+74730919945__*.HEIC
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.log
